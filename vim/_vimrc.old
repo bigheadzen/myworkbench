@@ -1,0 +1,218 @@
+" don't bother with vi compatibility
+set nocompatible
+
+" vundle setup
+ filetype off                   " required!
+ set rtp+=~/.vim/bundle/Vundle.vim/
+ call vundle#rc()
+
+" let Vundle manage Vundle
+" required! 
+Bundle 'gmarik/vundle'
+
+" My Bundles here:
+
+Bundle 'scrooloose/nerdtree'
+Bundle 'kien/ctrlp.vim'
+Bundle 'majutsushi/tagbar'
+Bundle 'Raimondi/delimitMate'
+Bundle 'tomtom/tcomment_vim'
+Bundle "MarcWeber/vim-addon-mw-utils"
+Bundle 'altercation/vim-colors-solarized'
+Bundle 'ervandew/supertab'
+"Bundle "garbas/vim-snipmate"
+"Bundle 'honza/vim-snippets'
+"Bundle 'Shougo/neocomplcache.vim'
+"Bundle 'scrooloose/syntastic'
+"Bundle 'sjl/gundo.vim'
+"Bundle 'vim-scripts/grep.vim'
+"Bundle 'chazy/cscope_maps'
+"Bundle 'vim-scripts/a.vim'
+"Bundle 'vim-scripts/Visual-Mark'
+"Bundle 'vim-scripts/VisIncr'
+
+"Bundle 'Valloric/YouCompleteMe'
+Bundle 'Yggdroot/indentLine'
+Bundle 'nathanaelkane/vim-indent-guides'
+
+"Bundle 'fatih/vim-go'
+ 
+" original repos on github
+"Bundle 'tpope/vim-fugitive'
+"Bundle 'Lokaltog/vim-easymotion'
+"Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
+"Bundle 'tpope/vim-rails.git'
+" vim-scripts repos
+"Bundle 'L9'
+"Bundle 'FuzzyFinder'
+" non github repos
+"Bundle 'git://git.wincent.com/command-t.git'
+" git repos on your local machine (ie. when working on your own plugin)
+"Bundle 'file:///Users/gmarik/path/to/plugin'
+" ...
+
+filetype plugin indent on     " required!
+"
+" Brief help
+" :BundleList          - list configured bundles
+" :BundleInstall(!)    - install(update) bundles
+" :BundleSearch(!) foo - search(or refresh cache first) for foo
+" :BundleClean(!)      - confirm(or auto-approve) removal of unused bundles
+"
+" see :h vundle for more details or wiki for FAQ
+" NOTE: comments after Bundle command are not allowed..
+
+
+" enable syntax highlighting
+syntax on
+syntax enable
+
+" Theme Solarized
+syntax enable
+if has('gui_running')
+    set background=dark
+    colorscheme solarized
+    if has("gui_win32")
+        set guifont=Consolas:h12:cANSI
+    endif
+else
+    "set background=light
+    "colorscheme solarized
+endif
+
+" keyboard shortcuts
+let mapleader = ','
+map <C-h> <C-w>h
+map <C-j> <C-w>j
+map <C-k> <C-w>k
+map <C-l> <C-w>l
+
+set nu
+set autoindent
+set autoread                                                 " reload files when changed on disk, i.e. via `git checkout`
+set clipboard=unnamed                                        " yank and paste with the system clipboard
+
+"open bottom staus
+set ru
+
+"hight text when search
+set hls
+set is "search text when text is not complete
+
+"hight text when search
+set hls
+set is "search text when text is not complete
+set ignorecase
+set smartcase
+
+set shiftwidth=4
+set softtabstop=4
+set tabstop=4
+set autoindent
+set expandtab
+set smarttab
+set cindent
+
+set spell
+
+"encoding
+set encoding=utf-8
+set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1
+
+set backspace=indent,eol,start
+
+"key map section
+
+imap jj <Esc>
+vmap ;; <Esc>
+nmap ;; <Esc>
+
+" keyboard shortcuts
+let mapleader = ','
+
+map <C-h> <C-w>h
+map <C-j> <C-w>j
+map <C-k> <C-w>k
+map <C-l> <C-w>l
+map <leader>l :Align
+nmap <leader>a :Ack<space>
+
+nmap <leader>b :CtrlPBuffer<CR>
+nmap <leader>d :NERDTreeToggle<CR>
+nmap <leader>f :NERDTreeFind<CR>
+nmap <leader>t :CtrlP<CR>
+nmap <leader>T :CtrlPTag<CR>
+nmap <leader>] :TagbarToggle<CR>
+map <silent> <leader>V :source ~/.vimrc<CR>:filetype detect<CR>:exe ":echo 'vimrc reloaded'"<CR>
+
+"breakline comfig
+set wrap
+set nolist
+set textwidth=0
+set wrapmargin=0
+set linebreak
+set formatoptions+=l
+
+"continue to move when reach the end of line or begin of line
+"I have to put it in the end to make it take effect, i've no idea why'
+set whichwrap=b,s,<,>,[,],h,l
+
+
+"Ctags
+"set tags=./tags;/
+"set tags+=~/.vim/systags
+
+"backupfiles
+set directory=~/.vim/backupfiles
+set backupdir=~/.vim/backupfiles
+set undodir=~/.vim/backupfiles
+
+"set nocscopetag
+
+"Line width Guide line
+"let &colorcolumn=join(range(81,999),",")
+"let &colorcolumn="80,".join(range(120,999),",")
+let &colorcolumn="120"
+highlight ColorColumn ctermbg=Cyan guibg=#2c2d27
+let g:indentLine_color_term = 255
+
+"YouCompleteMe config
+let g:ycm_global_ycm_extra_conf='/Users/junguo/dev/ycm_extra_conf.py'
+nnoremap <leader>jd :YcmCompleter GoToDefinitionElseDeclaration<CR>
+let g:ycm_autoclose_preview_window_after_completion=1
+let g:ycm_autoclose_preview_window_after_insertion=1
+let g:syntastic_cpp_compiler = 'clang++'
+let g:syntastic_cpp_compiler_options = ' --std=c++11'
+
+set completeopt-=preview
+"let g:SuperTabClosePreviewOnPopupClose = 1
+"let g:ycm_autoclose_preview_window_after_insertion = 1
+
+"gotagbar config
+let g:tagbar_type_go = {
+    \ 'ctagstype' : 'go',
+    \ 'kinds'     : [
+        \ 'p:package',
+        \ 'i:imports:1',
+        \ 'c:constants',
+        \ 'v:variables',
+        \ 't:types',
+        \ 'n:interfaces',
+        \ 'w:fields',
+        \ 'e:embedded',
+        \ 'm:methods',
+        \ 'r:constructor',
+        \ 'f:functions'
+    \ ],
+    \ 'sro' : '.',
+    \ 'kind2scope' : {
+        \ 't' : 'ctype',
+        \ 'n' : 'ntype'
+    \ },
+    \ 'scope2kind' : {
+        \ 'ctype' : 't',
+        \ 'ntype' : 'n'
+    \ },
+    \ 'ctagsbin'  : 'gotags',
+    \ 'ctagsargs' : '-sort -silent'
+    \ }

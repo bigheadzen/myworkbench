@@ -1,0 +1,30 @@
+@ECHO OFF 
+@DOSKEY ..=CD ..
+@DOSKEY ...=CD ..\..\
+@DOSKEY ....=CD ..\..\..\
+@DOSKEY ls=DIR $* 
+@DOSKEY cp=COPY $* 
+@DOSKEY xcp=XCOPY $*
+@DOSKEY mv=MOVE $* 
+@DOSKEY clear=CLS
+@DOSKEY c=CLS
+@DOSKEY h=DOSKEY /HISTORY
+@DOSKEY home=cd %USERPROFILE% 
+@DOSKEY af=tools\razzle.cmd amd64fre
+@DOSKEY afn=tools\razzle.cmd amd64fre no_oacr
+@DOSKEY afnoo=tools\razzle.cmd amd64fre no_oacr no_opt
+@DOSKEY ac=tools\razzle.cmd amd64chk
+@DOSKEY acn=tools\razzle.cmd amd64chk no_oacr
+@DOSKEY acnoo=tools\razzle.cmd amd64chk no_oacr no_opt
+@DOSKEY setddkenvx=C:\WinDDK\7600.16385.1\bin\setenv.bat C:\WinDDK\7600.16385.1 x86 fre
+@DOSKEY setddkenva=C:\WinDDK\7600.16385.1\bin\setenv.bat C:\WinDDK\7600.16385.1 x64 fre
+@DOSKEY windbgx="C:\Program Files (x86)\Windows Kits\8.0\Debuggers\x86\windbg.exe" $*
+@DOSKEY windbga="C:\Program Files (x86)\Windows Kits\8.0\Debuggers\x64\windbg.exe" $*
+@DOSKEY ib=CD "C:\Program Files (x86)\Microsoft SDKs\IbizaSDK"
+@DOSKEY ibp="C:\Program Files (x86)\Microsoft SDKs\IbizaSDK\Tools\Start-Portal.cmd" $*
+@DOSKEY subl="D:\bin\Sublime Text 3\sublime_text.exe" $*
+
+@DOSKEY vscmd="C:\Program Files (x86)\Microsoft Visual Studio 12.0\Common7\Tools\VsDevCmd.bat"
+@DOSKEY vc86="C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\vcvarsall.bat" x86
+@DOSKEY vc64="C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\vcvarsall.bat" amd64
+@DOSKEY ssh=ssh -i %USERPROFILE%\.ssh\id_rsa $*

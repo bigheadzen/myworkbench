@@ -1,0 +1,51 @@
+set nocompatible
+
+"basic vim config
+set nu
+syntax enable
+syntax on
+colorscheme desert
+
+"open bottom staus
+set ru
+
+"hight text when search
+set hls
+set is "search text when text is not complete
+set ignorecase
+set smartcase
+
+set shiftwidth=4
+set softtabstop=4
+set tabstop=4
+set autoindent
+set expandtab
+set smarttab
+set cindent
+
+set spell
+
+"concoding
+set encoding=utf-8
+set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1
+
+set backspace=indent,eol,start
+
+"key map section
+imap jj <Esc>
+vmap ;; <Esc>
+nmap ;; <Esc>
+
+"set nocompatible mode  (Not compatible with old vi)
+set nocp
+
+"breakline comfig
+set wrap
+set linebreak
+set nolist  " list disables linebreak
+set textwidth=0
+set wrapmargin=0
+
+"continue to move when reach the end of line or begin of line
+"Put it in the end to make it take effect"
+set whichwrap=b,s,<,>,[,],h,l

@@ -1,0 +1,288 @@
+" Preparation
+" git clone https://github.com/VundleVim/Vundle.vim.git  ~/.vim/bundle/Vundle.vim
+" mkdir -pv ~/.vim/backupfiles
+
+"""""""""""""""""""" Vundle Section """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+filetype off                  " required
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+Plugin 'VundleVim/Vundle.vim'
+
+Plugin 'flazz/vim-colorschemes'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'tomasr/molokai'
+
+"Plugin 'powerline/powerline'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+
+Plugin 'scrooloose/nerdtree'
+Plugin 'fholgado/minibufexpl.vim'
+Plugin 'ctrlpvim/ctrlp.vim'
+
+Plugin 'majutsushi/tagbar'
+Plugin 'nathanaelkane/vim-indent-guides'
+
+Plugin 'scrooloose/nerdcommenter' " '<Leader>cc' comment & '<Leader>cu' uncomment
+
+"Plugin 'vim-scripts/gtags.vim'
+Plugin 'whatot/gtags-cscope.vim'
+Plugin 'Raimondi/delimitMate'
+
+Plugin 'Valloric/YouCompleteMe'
+
+Plugin 'SirVer/ultisnips'
+Plugin 'honza/vim-snippets'
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+" To ignore plugin indent changes, instead use:
+"filetype plugin on
+
+" Brief help
+" :PluginList          - list configured plugins
+" :PluginInstall(!)    - install (update) plugins
+" :PluginSearch(!) foo - search (or refresh cache first) for foo
+" :PluginClean(!)      - confirm (or auto-approve) removal of unused plugins
+
+" see :h vundle for more details or wiki for FAQ
+" Put your non-Plugin stuff after this line
+
+"""""""""""""""""""" Vundle Section End """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+"""""""""""""""""""" Basic Section """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" open file type detection
+filetype on
+" load plugins according to file type detected
+filetype plugin on
+
+" hight search
+set hlsearch
+" instance search
+set incsearch
+" search ignore case and smart case
+set ignorecase
+set smartcase
+
+" close compatible mode
+set nocompatible
+
+" vim command auto complete
+set wildmenu
+
+" enable syntax highlighting
+syntax on
+syntax enable
+
+" show line number
+set number
+" show bottom ruler row
+set ruler
+
+" set indent mode and tab
+set autoindent
+set cindent
+set smartindent
+set shiftwidth=4
+set softtabstop=4
+set tabstop=4
+set expandtab
+set smarttab
+
+" reload files when changed on disk, i.e. via `git checkout`
+set autoread
+
+"encoding
+set encoding=utf-8
+set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1
+
+" make backspace and delete key work like most other apps in insert mode
+set backspace=indent,eol,start
+
+"breakline config
+set nowrap
+set nolist
+set textwidth=0
+set wrapmargin=0
+set linebreak
+set formatoptions+=l
+
+"continue to move when reach the end of line or begin of line
+set whichwrap=b,s,<,>,[,],h,l
+
+"backupfiles
+set directory=~/.vim/backupfiles
+set backupdir=~/.vim/backupfiles
+set undodir=~/.vim/backupfiles
+
+" Show line length guide at 120 chars
+" let &colorcolumn=join(range(81,999),",")
+" let &colorcolumn="80,".join(range(120,999),",")
+let &colorcolumn="120"
+highlight ColorColumn ctermbg=Cyan guibg=#2c2d27
+
+
+" Display whitespace chars
+set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
+
+"""""""""""""""""""" Basic Section End """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+"""""""""""""""""""" Key-mapping Section """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" redefine <ESC>
+imap jj <ESC>
+vmap ;; <ESC>
+nmap ;; <ESC>
+
+" Define Leader Key, <Leader>
+let mapleader=","
+
+" reload .vimrc
+map <silent> <leader>V :source ~/.vimrc<CR>:filetype detect<CR>:exe ":echo 'vimrc reloaded'"<CR>
+
+" Copy selected text to system clipboard
+vnoremap <Leader>y "+y
+" Past text from system clipboard
+nmap <Leader>p "+p
+
+" Window navigation
+map <C-h> <C-w>h
+map <C-j> <C-w>j
+map <C-k> <C-w>k
+map <C-l> <C-w>l
+
+" QuickFix windows
+map <Leader>qo :copen<CR>
+map <Leader>qc :cclose<CR>
+map <Leader>qp :cp<CR>
+map <Leader>qn :cn<CR>
+map <Leader>qf :cfirst<CR>
+map <Leader>ql :clast<CR>
+
+"""""""""""""""""""" Key-mapping Section End """""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+"""""""""""""""""""" Theme Section """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+set background=dark
+"colorscheme solarized
+colorscheme molokai
+"colorscheme phd
+
+if has('gui_running')
+    if has("gui_win32")
+        set guifont=Consolas:h12:cANSI
+    endif
+endif
+
+
+"""""""""""""""""""" Theme Section End """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+"""""""""""""""""""" Plugin Section End """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Toggle NERDTree
+nmap <leader>d :NERDTreeToggle<CR>
+" Find current file position in NERDTree
+nmap <leader>f :NERDTreeFind<CR> " Delete file buffer in VIM after deleted the file
+let NERDTreeAutoDeleteBuffer=1
+
+
+" Show/Hide MiniBufExplorer
+map <Leader>mb :MBEToggle<cr>
+" buffer switch tab
+map <C-Tab> :MBEbn<cr>
+map <C-S-Tab> :MBEbp<cr>
+
+
+"CtrlP config
+nmap <leader>cb :CtrlPBuffer<CR>
+nmap <leader>cp :CtrlP<CR>
+nmap <leader>ct :CtrlPTag<CR>
+
+
+" Open vim-airline by default
+set laststatus=2
+
+
+" Tagbar
+nmap <leader>] :TagbarToggle<CR>
+
+" vim-indent-guides
+" start with VIM
+let g:indent_guides_enable_on_vim_startup=0
+" show indent guides since second level
+let g:indent_guides_start_level=2
+" width of the guide area
+let g:indent_guides_guide_size=1
+" toggle indent guides
+:nmap <silent> <Leader>i <Plug>IndentGuidesToggle
+
+" UltiSnips 的 tab 键与 YCM 冲突，重新设定
+let g:UltiSnipsExpandTrigger="<leader><tab>"
+let g:UltiSnipsJumpForwardTrigger="<leader><tab>"
+let g:UltiSnipsJumpBackwardTrigger="<leader><s-tab>"
+
+"""""""""""""""""""" Plugin Section End """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+
+"""""""""""""""""""" GTAGS Section """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" cscope
+set cscopetag                  " use cscope as tags
+set cscopeprg='gtags-cscope'   " use gtags-cscope instead of cscope
+set cscopequickfix=s-,c-,d-,i-,t-,e-
+
+" gtags
+let GtagsCscope_Auto_Load = 1
+let GtagsCscope_Auto_Map = 1
+let GtagsCscope_Quiet = 1
+"map <C-]> :Gtags<CR><CR>
+"map <C-\> :Gtags -r<CR><CR>
+
+function! LoadDatabase()
+	let db = findfile("GTAGS", ".;")
+	if (!empty(db))
+		set nocscopeverbose
+		exe "cs add " . db
+		set cscopeverbose
+	endif
+endfunction
+
+"""""""""""""""""""" GTAGS Section End """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+"""""""""""""""""""" YouCompleteMe Section """""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" YCM 补全菜单配色
+" 菜单
+" highlight Pmenu ctermfg=2 ctermbg=3 guifg=#005f87 guibg=#EEE8D5
+" 选中项
+" highlight PmenuSel ctermfg=2 ctermbg=3 guifg=#AFD700 guibg=#106900
+let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
+ 
+" 补全功能在注释中同样有效
+let g:ycm_complete_in_comments=1
+" 允许 vim 加载 .ycm_extra_conf.py 文件，不再提示
+let g:ycm_confirm_extra_conf=0
+" 开启 YCM 标签补全引擎
+let g:ycm_collect_identifiers_from_tags_files=1
+" 引入 C++ 标准库tags
+set tags+=/usr/include/c++/5.4.0/tags
+" YCM 集成 OmniCppComplete 补全引擎，设置其快捷键
+inoremap <leader>, <C-x><C-o>
+" 补全内容不以分割子窗口形式出现，只显示补全列表
+set completeopt-=preview
+" 从第一个键入字符就开始罗列匹配项
+let g:ycm_min_num_of_chars_for_completion=1
+" 禁止缓存匹配项，每次都重新生成匹配项
+let g:ycm_cache_omnifunc=0
+" 语法关键字补全         
+let g:ycm_seed_identifiers_with_syntax=1
+
+nnoremap <leader>jd :YcmCompleter GoToDefinitionElseDeclaration<CR>
+
+"""""""""""""""""""" YouCompleteMe Section End """""""""""""""""""""""""""""""""""""""""""""""""""""

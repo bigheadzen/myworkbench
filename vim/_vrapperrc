@@ -1,0 +1,23 @@
+"hight text when search
+set hls
+set is "search text when text is not complete
+set ignorecase
+set smartcase
+
+set shiftwidth=4
+set softtabstop=4
+set tabstop=4
+set autoindent
+set expandtab
+set smarttab
+set cindent
+
+set spell
+
+set backspace=indent,eol,start
+
+"key map section
+imap jj <Esc>x
+vmap ;; <Esc>
+nmap ;; <Esc>
+
