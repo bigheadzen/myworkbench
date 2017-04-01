@@ -30,13 +30,15 @@ Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'scrooloose/nerdcommenter' " '<Leader>cc' comment & '<Leader>cu' uncomment
 
 "Plugin 'vim-scripts/gtags.vim'
-Plugin 'whatot/gtags-cscope.vim'
+"Plugin 'whatot/gtags-cscope.vim'
 Plugin 'Raimondi/delimitMate'
 
 Plugin 'Valloric/YouCompleteMe'
 
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
+
+Plugin 'derekwyatt/vim-fswitch'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -227,33 +229,44 @@ let g:UltiSnipsExpandTrigger="<leader><tab>"
 let g:UltiSnipsJumpForwardTrigger="<leader><tab>"
 let g:UltiSnipsJumpBackwardTrigger="<leader><s-tab>"
 
+" fswitch
+nmap <silent> <Leader>sw :FSHere<cr>
+
 """""""""""""""""""" Plugin Section End """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+ 
+"""""""""""""""""""" CTAGS Section """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+set tags=tags;
+" set tags+=/usr/include/tags
+set autochdir
+
+"""""""""""""""""""" CTAGS Section End """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 
-"""""""""""""""""""" GTAGS Section """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-" cscope
-set cscopetag                  " use cscope as tags
-set cscopeprg='gtags-cscope'   " use gtags-cscope instead of cscope
-set cscopequickfix=s-,c-,d-,i-,t-,e-
-
-" gtags
-let GtagsCscope_Auto_Load = 1
-let GtagsCscope_Auto_Map = 1
-let GtagsCscope_Quiet = 1
-"map <C-]> :Gtags<CR><CR>
-"map <C-\> :Gtags -r<CR><CR>
-
-function! LoadDatabase()
-	let db = findfile("GTAGS", ".;")
-	if (!empty(db))
-		set nocscopeverbose
-		exe "cs add " . db
-		set cscopeverbose
-	endif
-endfunction
-
-"""""""""""""""""""" GTAGS Section End """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"  """""""""""""""""""" GTAGS Section """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"  
+"  " cscope
+"  set cscopetag                  " use cscope as tags
+"  set cscopeprg='gtags-cscope'   " use gtags-cscope instead of cscope
+"  set cscopequickfix=s-,c-,d-,i-,t-,e-
+"  
+"  " gtags
+"  let GtagsCscope_Auto_Load = 1
+"  let GtagsCscope_Auto_Map = 1
+"  let GtagsCscope_Quiet = 1
+"  "map <C-]> :Gtags<CR><CR>
+"  "map <C-\> :Gtags -r<CR><CR>
+"  
+"  function! LoadDatabase()
+"  	let db = findfile("GTAGS", ".;")
+"  	if (!empty(db))
+"  		set nocscopeverbose
+"  		exe "cs add " . db
+"  		set cscopeverbose
+"  	endif
+"  endfunction
+"  
+"  """""""""""""""""""" GTAGS Section End """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 """""""""""""""""""" YouCompleteMe Section """""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
