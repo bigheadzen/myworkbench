@@ -165,7 +165,7 @@ Install.
 
 ## VIM
 
-See [VIM Configuration in Linux](https://gist.github.com/bigheadzen/6471593c046cb74077a6263972d7d77c)
+See [VIM Configuration in Linux](./VIM Configuration in Linux.md)
 
 ## ack
 
