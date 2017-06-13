@@ -6,3 +6,10 @@ https://stackoverflow.com/questions/24254979/how-to-delete-one-folder-directory-
 https://stackoverflow.com/questions/3673594/how-to-escape-parenthesis-in-grep  
 https://www.one-tab.com/page/7mPDgv7CSX25Way3zjY2kQ  
 https://www.one-tab.com/page/WbWiWoL5Qmi3D6tlZmlOhg  
+
+https://stackoverflow.com/questions/866721/how-to-generate-gcc-debug-symbol-outside-the-build-target
+
+gdb
+http://tromey.com/blog/?p=501
+https://sourceware.org/gdb/onlinedocs/gdb/Commands-In-Python.html
+https://sourceware.org/gdb/onlinedocs/gdb/Extending-GDB.html
