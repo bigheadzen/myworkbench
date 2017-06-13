@@ -1,3 +1,4 @@
+```
 https://help.github.com/articles/dealing-with-line-endings/#platform-all  
 https://en.wikibooks.org/wiki/Linux_Applications_Debugging_Techniques  
 https://stackoverflow.com/questions/9417967/how-to-list-empty-folders-in-linux  
@@ -80,4 +81,4 @@ https://www.tecmint.com/find-top-large-directories-and-files-sizes-in-linux/ | H
 http://stackoverflow.com/questions/1029969/why-is-my-git-repository-so-big | Why is my git repository so big? - Stack Overflow
 https://www.google.com/search?q=git+show+pack+contents&oq=git+show+pack+contents&aqs=chrome.0.0j69i57.6170j0j7&sourceid=chrome&ie=UTF-8 | git show pack contents - Google Search
 http://alblue.bandlem.com/2011/09/git-tip-of-week-objects-and-packfiles.html | Git Tip of the Week: Objects and Packfiles - AlBlue’s Blog
-
+```
