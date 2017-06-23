@@ -1,4 +1,6 @@
 ```
+https://stackoverflow.com/questions/324011/memcpy-vs-assignment-in-c
+
 https://help.github.com/articles/dealing-with-line-endings/#platform-all  
 https://en.wikibooks.org/wiki/Linux_Applications_Debugging_Techniques  
 https://stackoverflow.com/questions/9417967/how-to-list-empty-folders-in-linux  
