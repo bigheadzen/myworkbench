@@ -1,3 +1,9 @@
+
+## Latency Numbers
+
+https://gist.github.com/bigheadzen/9064906
+
+
 ```
 https://github.com/khizmax/libcds
 
