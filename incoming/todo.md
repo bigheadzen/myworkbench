@@ -1,4 +1,10 @@
 
+## HDD and SSD Latency
+
+https://en.wikipedia.org/wiki/Hard_disk_drive_performance_characteristics  
+https://en.wikipedia.org/wiki/Write_amplification  
+https://baike.baidu.com/item/%E7%B3%BB%E7%BB%9F%E6%80%BB%E7%BA%BF%E9%A2%91%E7%8E%87
+
 ## Latency Numbers
 
 https://gist.github.com/bigheadzen/9064906
