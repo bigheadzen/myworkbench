@@ -137,9 +137,6 @@ highlight ColorColumn ctermbg=Cyan guibg=#2c2d27
 " Display whitespace chars
 set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
 
-set guioptions -=m " Remove gvim menu
-set guioptions -=T " Remove gvim toolbar
-
 """""""""""""""""""" Basic Section End """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 """""""""""""""""""" Key-mapping Section """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
