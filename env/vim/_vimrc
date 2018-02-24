@@ -12,11 +12,11 @@ call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
 
-Plugin 'flazz/vim-colorschemes'
-Plugin 'altercation/vim-colors-solarized'
+" Plugin 'flazz/vim-colorschemes'
+" Plugin 'altercation/vim-colors-solarized'
 Plugin 'tomasr/molokai'
 
-"Plugin 'powerline/powerline'
+" Plugin 'powerline/powerline'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 
@@ -29,8 +29,10 @@ Plugin 'nathanaelkane/vim-indent-guides'
 
 Plugin 'scrooloose/nerdcommenter' " '<Leader>cc' comment & '<Leader>cu' uncomment
 
-"Plugin 'vim-scripts/gtags.vim'
-"Plugin 'whatot/gtags-cscope.vim'
+" " For gtags instead of ctags
+" Plugin 'vim-scripts/gtags.vim'
+" Plugin 'whatot/gtags-cscope.vim'
+
 Plugin 'Raimondi/delimitMate'
 
 Plugin 'Valloric/YouCompleteMe'
@@ -38,7 +40,9 @@ Plugin 'Valloric/YouCompleteMe'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 
-"Plugin 'derekwyatt/vim-fswitch'
+" " File switch between .h and .cc/cpp/c files
+" " :help fswitch
+" Plugin 'derekwyatt/vim-fswitch'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
